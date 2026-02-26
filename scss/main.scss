@@ -1,0 +1,12 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$color-elegido: rgb(0, 255, 238);
+
+$theme-colors: map-merge(
+    $theme-colors, (
+        "brand": $color-elegido
+    )
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
