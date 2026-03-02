@@ -1,9 +1,11 @@
+@use "sass:map";
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
+// Para colores usar el @use para usar map.merge solo usamos el import normal cuando queremos sobreescribir las utilidades de bootstrap
 
 $color-elegido: rgb(0, 255, 238);
 
-$theme-colors: map-merge(
+$theme-colors: map.merge(
     $theme-colors, (
         "brand": $color-elegido
     )
