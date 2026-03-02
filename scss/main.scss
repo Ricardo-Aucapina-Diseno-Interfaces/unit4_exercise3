@@ -1,4 +1,5 @@
 @use "sass:map";
+
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 // Para colores usar el @use para usar map.merge solo usamos el import normal cuando queremos sobreescribir las utilidades de bootstrap
@@ -11,4 +12,39 @@ $theme-colors: map.merge(
     )
 );
 
+$brand-text-emphasis: shade-color($color-elegido, 60%);
+$brand-bg-subtle: tint-color($color-elegido, 80%);
+$brand-border-subtle: tint-color($color-elegido, 60%);
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap/scss/maps";
+
+$custom-theme-colors-text: (
+    "brand": $brand-text-emphasis
+);
+$theme-colors-text: map.merge($theme-colors-text, $custom-theme-colors-text);
+
+$custom-theme-colors-bg-subtle: (
+    "brand": $brand-bg-subtle
+);
+$theme-colors-bg-subtle: map.merge($theme-colors-bg-subtle, $custom-theme-colors-bg-subtle);
+
+$custom-theme-colors-border-subtle: (
+    "brand": $brand-border-subtle
+);
+$theme-colors-border-subtle: map.merge($theme-colors-border-subtle, $custom-theme-colors-border-subtle);
+
+$custom-utilities-text-emphasis-colors: (
+    "brand-emphasis": $brand-text-emphasis
+);
+$utilities-text-emphasis-colors: map.merge($utilities-text-emphasis-colors, $custom-utilities-text-emphasis-colors);
+
+$custom-utilities-bg-subtle: (
+    "brand-subtle": $brand-bg-subtle
+);
+$utilities-bg-subtle: map.merge($utilities-bg-subtle, $custom-utilities-bg-subtle);
+
+$custom-utilities-border-subtle: (
+    "brand-subtle": $brand-border-subtle
+);
+$utilities-border-subtle: map.merge($utilities-border-subtle, $custom-utilities-border-subtle);
