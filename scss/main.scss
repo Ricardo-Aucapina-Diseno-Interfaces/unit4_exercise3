@@ -5,7 +5,7 @@
 @import "../node_modules/bootstrap/scss/variables-dark";
 // Para colores usar el @use para usar map.merge solo usamos el import normal cuando queremos sobreescribir las utilidades de bootstrap
 
-$color-elegido: rgb(0, 255, 238);
+$color-elegido: rgb(10, 207, 194);
 
 $theme-colors: map.merge(
     $theme-colors, (
@@ -59,14 +59,29 @@ $utilities-border-subtle: map.merge($utilities-border-subtle, $brand-utilities-b
 
 $utilities: map.merge(
     $utilities, (
+        // Aquí podemos poner el nombre que sea
         "letter-spacing":(
-            property: letter-spacing,
-            class: ls,
-            responsive:true,
-            values:(
+            property: letter-spacing, //aquí va el nombre real que se va a aplicar
+            class: ls, //el prefiijo del nombre de la clase
+            responsive:true, //esto genera -sm, -md, -lg de forma automáticamente
+            values:(// aquí ponemos los valores que queremos aplicar
                 compressed: -0.1rem,
                 normal: 0,
                 expanded: 0.5rem
+            )
+        )
+    )
+);
+
+$utilities: map.merge(
+    $utilities, (
+        "viewport-height":(
+            property: height,
+            class: vh,
+            responsive: true,
+            values:(
+                50: 50vh,
+                100: 100vh
             )
         )
     )
