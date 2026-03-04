@@ -54,4 +54,22 @@ $brand-utilities-border-subtle: (
 $utilities-border-subtle: map.merge($utilities-border-subtle, $brand-utilities-border-subtle);
 
 
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+$utilities: map.merge(
+    $utilities, (
+        "letter-spacing":(
+            property: letter-spacing,
+            class: ls,
+            responsive:true,
+            values:(
+                compressed: -0.1rem,
+                normal: 0,
+                expanded: 0.5rem
+            )
+        )
+    )
+);
+
 @import "../node_modules/bootstrap/scss/bootstrap";
